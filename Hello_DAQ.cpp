@@ -1,11 +1,11 @@
 ﻿#include <iostream>
-#include "NIDAQmx.h"
+#include <NIDAQmx.h>
 
 using namespace std;
 
 #define DAQmxErrChk(functionCall) if (DAQmxFailed(error = (functionCall))) {DAQmxGetExtendedErrorInfo(errBuff, 2048); cerr << "DAQmx Error: " << errBuff << endl; goto Error;}
 
-int main() {
+int main( void ) {
     int32 error = 0; // 儲存錯誤代碼
     TaskHandle taskHandle = 0; // 定義任務控制代碼
     char errBuff[2048] = { 0 }; // 儲存錯誤訊息的緩衝區
